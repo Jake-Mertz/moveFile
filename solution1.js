@@ -27,5 +27,5 @@ function moveFunction() {
 
 const interval = setInterval(moveFunction, 1000);
 
-// change 1000 to 86400000 for operation to occur once every 24 hours
+// change 1000 to 86400000 for function to execute once every 24 hours
 // 1000 = 1 second
