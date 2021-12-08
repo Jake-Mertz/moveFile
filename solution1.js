@@ -1,3 +1,6 @@
+// File creation and movement occur on set interval
+// beginning at execution of file
+
 const fs = require('fs-extra')
 
 let number = 1;
@@ -17,6 +20,7 @@ function moveFunction() {
     filename = 'bob' + number + '.txt';
     file = './dir1/' + filename;
     file2 = './dir2/' + filename;
+    console.log(number);
     }
   );
 }
@@ -24,5 +28,4 @@ function moveFunction() {
 const interval = setInterval(moveFunction, 1000);
 
 // change 1000 to 86400000 for operation to occur once every 24 hours
-
-moveFunction();
+// 1000 = 1 second
