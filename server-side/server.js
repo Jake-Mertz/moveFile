@@ -21,24 +21,39 @@ app.get("/", cors(), async (req, res) => {
 
 // ----vv----sendFile Routes----vv----//
 
-app.use('/sendFile', function (req, res, next) {
-  var options = {
-    root: path.join('./dir4')
-  };
-  // var fileName = 'bob.txt';
-  res.sendFile(filename, options, function (err) {
-    if (err) {
-      next(err);
-    } else {
-      console.log('Sent:', filename);
-      next();
-    }
-  });
-});
+// app.use('/sendFile', function (req, res, next) {
+//   var options = {
+//     root: path.join('./dir4')
+//   };
+//   // var fileName = 'bob.txt';
+//   res.sendFile(filename, options, function (err) {
+//     if (err) {
+//       next(err);
+//     } else {
+//       console.log('Sent:', filename);
+//       next();
+//     }
+//   });
+// });
 
-app.get('/sendFile', function (req, res) {
-  console.log("File Sent")
-  res.send();
+// app.get('/sendFile', function (req, res) {
+//   console.log("File Sent")
+//   res.send();
+// });
+
+app.post('http://localhost:5000/sendit', function(req, res){
+    var options = {
+      root: path.join('./dir3/' + filename)
+    };
+
+    // var fileName = 'Hello.txt';
+    res.sendFile(fileName, options, function (err) {
+        if (err) {
+            next(err);
+        } else {
+            console.log('Sent:', fileName);
+        }
+    });
 });
 
 
@@ -49,4 +64,4 @@ app.listen(port, () => {
   console.log(`Listening on port ${port}, welcome to the server side`)
 })
 
-// export default app;
+export default app;
