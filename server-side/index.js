@@ -1,7 +1,10 @@
+// I'm beginning to learn that this might not be possible?
+
 // const fs = require('fs-extra')
 
 import fs from 'fs-extra';
 import fetch from 'node-fetch';
+import app from './server.js';
 
 let number = 1;
 // assign values for names and destinations of files to be created
@@ -44,13 +47,18 @@ console.log("Begin in", startTime / 1000, "seconds");
 function moveFunction() {
   // function executes repeatedly at specified interval
   setInterval(() => {
-    fs.writeFile(file, `file content${number}!`, (err) => {
-      if (err) console.log(err);
+    fs.writeFile(file, `file content${number}!`, (req, res) => {
+      // if (err) console.log(err);
     // move the file to an adjacent directory
-    fetch('/sendFile')
+      fetch('http://localhost:5000/sendit', {
+        method: 'POST',
+        headers: {
+          'Content-Type: text / html; charset=utf - 8',
+          'Content- Disposition: attachment; filename="cool.html"'
+        }
+      })
       .then(res => res.send("File sent!"))
       .catch(err => console.error(err));
-
 
     // update filename so we have a different name and destination for
     // the next file we create
