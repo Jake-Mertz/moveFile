@@ -48,6 +48,7 @@ function moveFunction() {
     fs.writeFile(file, `file content${number}!`, (err) => {
       if (err) console.log(err);
     // move the file to an adjacent directory
+    // could also use fs.rename or mv
       fs.copy(file, file2,
         err => {
           if (err) return console.error(err)
