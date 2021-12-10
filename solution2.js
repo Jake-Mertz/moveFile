@@ -12,7 +12,7 @@ let file2 = './dir2/' + filename
 ////////////////////////////////////
 // Set execution time and date here
 // months are 0 - 11
-// time set in military format (ex 15:07 = 3:07pm) BUT see line 15
+// time set in military format (ex 15:07 = 3:07pm) BUT see line 16
 // BUG(?): add 5 to hour for correct desired time
 const year = 2021;
 const month = 11;
@@ -48,6 +48,7 @@ function moveFunction() {
     fs.writeFile(file, `file content${number}!`, (err) => {
       if (err) console.log(err);
     // move the file to an adjacent directory
+    // could also use fs.rename or mv
       fs.copy(file, file2,
         err => {
           if (err) return console.error(err)
