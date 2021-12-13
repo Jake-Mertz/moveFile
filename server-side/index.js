@@ -11,7 +11,6 @@ const MongoClient = new mongodb.MongoClient(uri);
 const dbName = 'sample_files'
 
 MongoClient.connect(function (error) {
-  process.env.SAMPLEFILES_DB_URI,
   assert.ifError(error);
 
   const db = MongoClient.db(dbName);
