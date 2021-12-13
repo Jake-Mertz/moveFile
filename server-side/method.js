@@ -1,9 +1,9 @@
 const fs = require('fs-extra')
 
-const db = client.db(Cluster0);
-const bucket = new mongodb.GridFSBucket(db);
+// const db = client.db(Cluster0);
+// const bucket = new mongodb.GridFSBucket(db);
 
-const bucket = new mongodb.GridFSBucket(db, { bucketName: 'sampleFilesBucket' });
+// const bucket = new mongodb.GridFSBucket(db, { bucketName: 'sampleFilesBucket' });
 
 
 
