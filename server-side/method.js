@@ -1,17 +1,9 @@
-const fs = require('fs-extra')
+const fse = require('fs-extra')
 
-// const db = client.db(Cluster0);
-// const bucket = new mongodb.GridFSBucket(db);
-
-// const bucket = new mongodb.GridFSBucket(db, { bucketName: 'sampleFilesBucket' });
-
-
-
-
-// let number = 1;
 // assign values for names and destinations of files to be created
-// let filename = 'bob' + number + '.txt'
-// let file = './dir1/' + filename
+let number = 1;
+let filename = 'bob' + number + '.txt'
+let file = './dir1/' + filename
 // let file2 = './dir2/' + filename
 
 ////////////////////////////////////
@@ -50,28 +42,24 @@ function moveFunction() {
   // function executes repeatedly at specified interval
   setInterval(() => {
     // create a file so we have something to move
-    // fs.writeFile(file, `file content${number}!`, (err) => {
-    //   if (err) console.log(err);
-      // move the file to an adjacent directory
-      // could also use fs.rename or mv
+    fse.writeFile(file, `file content${number}!`, (err) => {
+      if (err) console.log(err);
+
 
       ///////////////////////////////////
       // move file method goes here
 
       ///////////////////////////////////
-      // fs.copy(file, file2,
-      //   err => {
-      //     if (err) return console.error(err)
-      //   }
-      // );
+
+
       // update filename so we have a different name and destination for
       // the next file we create
-      // number++;
-      // filename = 'bob' + number + '.txt';
-      // file = './dir1/' + filename;
+      number++;
+      filename = 'bob' + number + '.txt';
+      file = './dir1/' + filename;
       // file2 = './dir2/' + filename;
-      // console.log(number)
-    }
+      console.log(number)
+      }
     );
   }, 1000);
   // change 1000 to 86400000 for function to execute once every 24 hours
