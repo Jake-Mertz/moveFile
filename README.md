@@ -1,7 +1,7 @@
 # moveFile
 A series of solutions for the transfer of files.
 
-solution1 is a partial solution for exemplification of functionality sans the choice of function execution time.
+solution1 is a partial solution for exemplification of functionality sans the choice of function execution date/time.
 
 solution2 is a complete client-side solution.
 
