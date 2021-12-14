@@ -5,4 +5,4 @@ solution1 is a partial solution for exemplification of functionality sans the ch
 
 solution2 is a complete client-side solution.
 
-solution3 (inside the server-side folder) is a complete solution which utilizes MongoDB for the movement of files. I'm not sure whether this is actually a server-side solution or not.
+solution3 (inside the server-side folder) is a complete solution which moves files by uploading them to MongoDB then downloading them to a new directory. I'm not sure whether this is a server-side solution or not.
